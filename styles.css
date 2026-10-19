@@ -1,558 +1,685 @@
+/* Colors follow the app's own dark theme */
 :root {
-    --bg-color: #0f1115;
-    --bg-secondary: #ff00ff;
-    /* Used for glow effects, will be significantly reduced in opacity */
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --accent-color: #6366f1;
-    /* Indigo */
-    --accent-glow: rgba(99, 102, 241, 0.5);
-    --card-bg: rgba(255, 255, 255, 0.05);
-    /* Glassmorphism */
-    --card-border: rgba(255, 255, 255, 0.1);
-    --font-main: 'Outfit', sans-serif;
-    --spacing-container: 1200px;
+    --bg: #0f1419;
+    --bg-raised: #141a22;
+    --card: #1a1f2e;
+    --surface: #242b3d;
+    --border: #2d3548;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --subtle: #6b7280;
+    --tint: #3b82f6;
+    --tint-soft: rgba(59, 130, 246, 0.14);
+    --success: #10b981;
+    --radius: 20px;
+    --container: 1140px;
+    --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: var(--font-main);
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    line-height: 1.6;
-    overflow-x: hidden;
+html {
     scroll-behavior: smooth;
+    /* Keep anchored sections clear of the sticky nav */
+    scroll-padding-top: 76px;
 }
 
-/* Background Effects */
-.background-globes {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden;
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
-.globe {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.4;
-    animation: float 10s infinite ease-in-out;
+img {
+    display: block;
+    max-width: 100%;
 }
 
-.globe-1 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #4f46e5, transparent 70%);
-    top: -100px;
-    left: -100px;
-}
-
-.globe-2 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, #ec4899, transparent 70%);
-    bottom: 20%;
-    right: -50px;
-    animation-delay: -2s;
-}
-
-.globe-3 {
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, #06b6d4, transparent 70%);
-    bottom: -50px;
-    left: 30%;
-    animation-delay: -5s;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0) scale(1);
-    }
-
-    50% {
-        transform: translateY(-20px) scale(1.05);
-    }
-}
-
-/* Typography */
-h1,
-h2,
-h3 {
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
-h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-p {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-}
-
-.gradient-text {
-    background: linear-gradient(135deg, #818cf8, #c084fc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Layout */
-.container {
-    max-width: var(--spacing-container);
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* Navbar */
-.navbar {
-    padding: 1.5rem 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    background: rgba(15, 17, 21, 0.7);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+a {
+    color: inherit;
     text-decoration: none;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
-.nav-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    /* Slightly rounded corners for app icon look */
-}
-
-.logo .dot {
-    color: var(--accent-color);
-}
-
-.nav-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
 /* Buttons */
 .btn {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 14px;
+    background: var(--tint);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
-.btn-primary {
-    background: var(--accent-color);
-    color: white;
-    box-shadow: 0 4px 15px var(--accent-glow);
-}
-
-.btn-primary:hover {
+.btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--accent-glow);
+    box-shadow: 0 14px 36px rgba(59, 130, 246, 0.45);
 }
 
-.btn-secondary {
+.btn-ghost {
     background: transparent;
-    color: var(--text-primary);
-    border: 1px solid var(--card-border);
-    margin-left: 1rem;
+    border-color: var(--border);
+    box-shadow: none;
+    color: var(--text);
 }
 
-.btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.05);
+.btn-ghost:hover {
+    background: var(--card);
+    box-shadow: none;
 }
 
-.btn-large {
-    padding: 1rem 3rem;
-    font-size: 1.2rem;
+.btn-small {
+    padding: 9px 16px;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    box-shadow: none;
 }
 
-/* Sections */
-section {
-    padding: 5rem 0;
+/* Navigation */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(15, 20, 25, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.logo img {
+    border-radius: 9px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.nav-links a:not(.btn):hover {
+    color: var(--text);
 }
 
 /* Hero */
 .hero {
-    padding-top: 150px;
-    padding-bottom: 80px;
-    display: flex;
-    align-items: center;
-}
-
-.hero .container {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-}
-
-.hero-content {
-    flex: 1;
-}
-
-.hero-subtitle {
-    margin-bottom: 2rem;
-    max-width: 500px;
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
     position: relative;
-    perspective: 1000px;
-}
-
-/* Phone Frame & Scrolling */
-.phone-frame {
-    width: 300px;
-    height: 600px;
-    background: #1a1d24;
-    border-radius: 40px;
-    border: 12px solid #333;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    padding: 80px 0 100px;
     overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: -200px -10% auto auto;
+    width: 760px;
+    height: 760px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.28), transparent 65%);
+    pointer-events: none;
+}
+
+.hero-inner {
     position: relative;
-    transform: rotateY(-10deg) rotateX(5deg);
-    transition: transform 0.5s ease;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 48px;
 }
 
-.phone-frame:hover {
-    transform: rotateY(0) rotateX(0);
+.eyebrow {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--tint-soft);
+    color: #93c5fd;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 22px;
 }
 
-.phone-screen {
-    width: 100%;
-    height: 100%;
+.hero h1 {
+    font-size: clamp(2.3rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+}
+
+.accent {
+    color: var(--tint);
+}
+
+.lead {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 560px;
+    margin-bottom: 32px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 32px;
+}
+
+.hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+    list-style: none;
+    color: var(--subtle);
+    font-size: 0.95rem;
+}
+
+.hero-facts li::before {
+    content: '✓';
+    color: var(--success);
+    font-weight: 800;
+    margin-right: 8px;
+}
+
+.hero-facts strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* Phones */
+.phone {
+    /* Width and ratio are the screen's; the bezel is drawn outside it */
+    box-sizing: content-box;
+    width: 260px;
+    aspect-ratio: 1080 / 2252;
+    border-radius: 40px;
+    border: 10px solid #232a36;
     background: #000;
     overflow: hidden;
-    border-radius: 28px;
-    /* Match outer curvature considering border width */
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
 }
 
-.scrollable-screen {
-    overflow-y: hidden;
-    /* Hide scrollbar, let animation handle it */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE/Edge */
-}
-
-.scrollable-screen::-webkit-scrollbar {
-    display: none;
-    /* Chrome/Safari */
-}
-
-.scroll-img {
+.phone img {
     width: 100%;
-    display: block;
-    /* Auto-scroll animation */
-    animation: autoScroll 15s linear infinite alternate;
 }
 
-/* Pause scroll on hover */
-.phone-frame:hover .scroll-img {
+.hero-phones {
+    position: relative;
+    height: 600px;
+}
+
+.hero-phones .phone {
+    position: absolute;
+}
+
+.phone-front {
+    right: 90px;
+    top: 0;
+    z-index: 2;
+}
+
+.phone-back {
+    right: -30px;
+    top: 50px;
+    transform: rotate(8deg);
+    opacity: 0.55;
+    filter: saturate(0.8);
+}
+
+/* The long Home screenshot scrolls slowly inside the front phone */
+.scrolling img {
+    animation: scroll-screen 22s ease-in-out infinite alternate;
+}
+
+.scrolling:hover img {
     animation-play-state: paused;
 }
 
-@keyframes autoScroll {
-    0% {
+@keyframes scroll-screen {
+    0%,
+    8% {
         transform: translateY(0);
     }
 
+    92%,
     100% {
-        transform: translateY(calc(-100% + 576px));
+        /* Height of the image minus the height of the screen */
+        transform: translateY(calc(-100% + 260px * 2252 / 1080));
     }
-
-    /* Scroll to bottom */
 }
 
-/* Placeholders */
-.placeholder-glow {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 20px;
-    display: flex;
+/* Feature sections */
+.feature {
+    padding: 56px 0;
+}
+
+.feature-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.2);
-    font-weight: 600;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    gap: 80px;
 }
 
-.app-screenshot-placeholder {
-    width: 300px;
-    /* Mobile width approximate */
-    height: 600px;
-    border-radius: 30px;
-    background: #1a1d24;
-    /* Slightly lighter than bg */
-    border: 8px solid #333;
-    /* Phone bezel */
+.feature.reverse .feature-inner {
+    grid-template-columns: 1fr auto;
+}
+
+.feature.reverse .feature-inner > :first-child {
+    order: 2;
+}
+
+.feature-copy {
+    max-width: 520px;
+}
+
+.tag {
+    display: inline-block;
+    color: var(--tint);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.feature h2 {
+    font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+.feature p {
+    color: var(--muted);
+    font-size: 1.08rem;
+    margin-bottom: 22px;
+}
+
+.checks {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+.checks li {
+    position: relative;
+    padding-left: 32px;
+}
+
+.checks li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--tint-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 20px no-repeat;
+}
+
+.phone-pair {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 22px;
 }
 
-/* Features */
-.features {
-    position: relative;
+.phone-pair .phone {
+    width: 230px;
 }
 
-/* Feature Marquee */
-.feature-marquee {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 1rem 0 2rem 0;
+.phone-pair .phone:last-child {
+    margin-top: 60px;
+}
+
+/* Feature grid */
+.more {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 44px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    padding: 26px;
+    border-radius: var(--radius);
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+.card-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: var(--surface);
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 0.97rem;
+}
+
+/* Gallery */
+.gallery {
+    padding: 40px 0 90px;
+}
+
+.gallery .section-title {
+    margin-bottom: 36px;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    padding: 10px 0 24px;
+    /* It loops endlessly, so a scrollbar would only jump around */
+    scrollbar-width: none;
     cursor: grab;
-    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-.feature-track {
-    display: flex;
-    gap: 2rem;
-    width: max-content;
-    animation: scrollMarquee 50s linear infinite;
-    /* Slower for readability */
+.gallery-track:focus-visible {
+    outline: 2px solid var(--tint);
+    outline-offset: -2px;
 }
 
-.feature-marquee:hover .feature-track {
-    animation-play-state: paused;
+.gallery-track::-webkit-scrollbar {
+    display: none;
 }
 
-.feature-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 2rem;
-    border-radius: 20px;
-    transition: transform 0.3s ease;
-    min-width: 300px;
-    /* Fixed width for scrolling cards */
-    max-width: 300px;
+.gallery-track.dragging {
+    cursor: grabbing;
 }
 
-.feature-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
+.gallery-track img {
+    -webkit-user-drag: none;
 }
 
-.icon-box {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.gallery-track figure {
+    flex: 0 0 230px;
 }
 
-/* Screenshots Marquee */
-.screenshot-marquee {
+.gallery-track img {
     width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding-bottom: 2rem;
-    cursor: grab;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-.screenshot-track {
-    display: flex;
-    gap: 2rem;
-    width: max-content;
-    animation: scrollMarquee 40s linear infinite;
-}
-
-.screenshot-marquee:hover .screenshot-track {
-    animation-play-state: paused;
-}
-
-@keyframes scrollMarquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-
-    /* seamless loop */
-}
-
-.screenshot-item {
-    min-width: 260px;
-    height: 600px;
-    /* Increased to fit taller screens */
-    border-radius: 20px;
-    overflow: hidden;
-    /* Clip image corners */
-    border: 4px solid #333;
-    flex-shrink: 0;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.screenshot-item:hover {
-    transform: translateY(-10px);
-}
-
-.screenshot-item img {
-    width: 100%;
-    height: 100%;
+    aspect-ratio: 1080 / 2252;
     object-fit: cover;
-    display: block;
+    border-radius: 26px;
+    border: 6px solid #232a36;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
+.gallery-track figcaption {
+    margin-top: 12px;
+    text-align: center;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Call to action */
+.cta {
+    padding: 20px 0 100px;
+}
+
+.cta-inner {
+    text-align: center;
+    padding: 64px 24px;
+    border-radius: 32px;
+    background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.3), transparent 70%), var(--card);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-inner img {
+    border-radius: 18px;
+    margin-bottom: 22px;
+}
+
+.cta-inner h2 {
+    font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+}
+
+.cta-inner p {
+    color: var(--muted);
+    margin-bottom: 28px;
+}
 
 /* Footer */
 .footer {
-    padding: 2rem 0;
-    border-top: 1px solid var(--card-border);
-    color: var(--text-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 36px 0 44px;
+    color: var(--subtle);
     font-size: 0.9rem;
 }
 
-.footer-content {
+.footer-inner {
     display: flex;
     flex-direction: column;
-    /* Stack vertically */
     align-items: center;
-    /* Center horizontally */
-    gap: 1.5rem;
-    /* Space between icons and copyright */
+    gap: 16px;
 }
 
-.social-links {
+.social {
     display: flex;
-    gap: 1.5rem;
+    gap: 12px;
 }
 
-.visit-count {
-    margin: 0;
-    opacity: 0.7;
+.social a {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.social-btn {
-    width: 50px;
-    /* Slightly larger for icons */
-    height: 50px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
+.social a:hover {
+    color: var(--text);
+    border-color: var(--tint);
 }
 
-.social-icon {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-    color: var(--text-primary);
-}
-
-.whatsapp-icon {
-    color: #25D366;
-}
-
-/* Official WhatsApp brand color */
-.gmail-icon {
-    color: #EA4335;
-}
-
-/* Official Gmail brand color */
-.coffee-icon {
-    color: #FFDD00;
-}
-
-.social-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    /* Footer styles are already centered by default with column layout, so no specific overrides needed */
-
-    h1 {
-        font-size: 2.5rem;
+/* Tablets */
+@media (max-width: 960px) {
+    .hero {
+        padding: 56px 0 70px;
     }
 
-    .hero .container {
-        flex-direction: column;
+    .hero-inner {
+        grid-template-columns: 1fr;
         text-align: center;
     }
 
-    .hero-subtitle {
-        margin: 0 auto 2rem auto;
+    .lead {
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+    .hero-actions,
+    .hero-facts {
+        justify-content: center;
     }
 
-    .btn-secondary {
-        margin-left: 0;
+    .hero-phones {
+        height: 560px;
+        width: 340px;
+        margin: 0 auto;
     }
 
-    .app-screenshot-placeholder {
-        height: 500px;
-        width: 250px;
+    .phone-front {
+        left: 0;
+        right: auto;
     }
 
-    .screenshot-item {
-        min-width: 220px;
-        height: 440px;
+    .phone-back {
+        right: -40px;
+    }
+
+    .feature-inner,
+    .feature.reverse .feature-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .feature.reverse .feature-inner > :first-child {
+        order: 0;
+    }
+
+    .checks {
+        text-align: left;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .nav-links a:not(.btn) {
+        display: none;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-phones {
+        width: 260px;
+        height: 520px;
+    }
+
+    .hero-phones .phone,
+    .phone {
+        width: 224px;
+        border-width: 8px;
+        border-radius: 34px;
+    }
+
+    .phone-back {
+        display: none;
+    }
+
+    @keyframes scroll-screen {
+        0%,
+        8% {
+            transform: translateY(0);
+        }
+
+        92%,
+        100% {
+            transform: translateY(calc(-100% + 224px * 2252 / 1080));
+        }
+    }
+
+    .phone-pair {
+        gap: 14px;
+    }
+
+    /* Two phones side by side within the 16px gutters */
+    .phone-pair .phone {
+        width: calc((100vw - 46px) / 2 - 16px);
+        max-width: 184px;
+    }
+
+    .phone-pair .phone:last-child {
+        margin-top: 36px;
+    }
+
+    .feature {
+        padding: 48px 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-track figure {
+        flex-basis: 64vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scrolling img {
+        animation: none;
+    }
+
+    .btn,
+    html {
+        transition: none;
+        scroll-behavior: auto;
     }
 }

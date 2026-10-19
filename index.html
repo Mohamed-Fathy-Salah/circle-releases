@@ -4,186 +4,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circle - Effortless Expense Tracking</title>
-    <meta name="description" content="Track expenses, settle group debts, and gain financial insights with Circle.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Circle - Money, Friends &amp; Deals in One App</title>
+    <meta name="description"
+        content="Track your accounts, split costs with friends, compare deals by monthly return and work out your Zakat. Free, offline and ad-free for Android.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="public/icon.png">
+    <meta name="theme-color" content="#0f1419">
     <meta property="og:title" content="Circle">
     <meta property="og:description"
-        content="Android app designed to make managing personal, external, and group expenses and incomes effortless!">
-    <meta property="og:image" content="https://circle0.netlify.app/public/og.png">
-    <meta property="og:url" content="https://circle0.netlify.app/">
+        content="Your accounts, your friends and your deals in one place. Free, offline and ad-free for Android.">
+    <meta property="og:image" content="https://circle-releases.pages.dev/public/og.png">
+    <meta property="og:url" content="https://circle-releases.pages.dev/">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
-        <div class="globe globe-3"></div>
-    </div>
-
-    <nav class="navbar">
-        <div class="container">
+    <nav class="nav">
+        <div class="container nav-inner">
             <a href="#" class="logo">
-                <img src="public/icon.png" alt="Circle App Icon" class="nav-icon">
-                Circle<span class="dot">.</span>
+                <img src="public/icon.png" alt="" width="32" height="32">
+                Circle
             </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#gallery">Screens</a>
+                <a href="https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/download/latest/circle.apk"
+                    class="btn btn-small">Download</a>
+            </div>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Master Your <span class="gradient-text">Finances</span> Together.</h1>
-                <p class="hero-subtitle">The simplest way to track personal expenses and settle up with friends.
-                    Beautiful, intuitive, and powerful.</p>
-                <div class="hero-buttons">
-                    <a href="https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/download/latest/circle.apk" class="btn btn-primary" id="download-hero" target="_blank">Download for Android</a>
-                    <a href="#features" class="btn btn-secondary">Learn More</a>
+        <div class="container hero-inner">
+            <div class="hero-copy">
+                <span class="eyebrow">Free for Android · No ads · Works offline</span>
+                <h1>Your money, your friends and your deals. <span class="accent">In one circle.</span></h1>
+                <p class="lead">Track every account, split trips and bills with friends, see what an investment
+                    really earns each month and work out your Zakat. Everything stays on your phone.</p>
+                <div class="hero-actions">
+                    <a href="https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/download/latest/circle.apk"
+                        class="btn" id="download-hero">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                            <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z" />
+                        </svg>
+                        Download the APK
+                    </a>
+                    <a href="#features" class="btn btn-ghost">See what it does</a>
                 </div>
+                <ul class="hero-facts">
+                    <li><strong>English</strong> &amp; <strong>العربية</strong></li>
+                    <li>Any currency</li>
+                    <li>Backup &amp; Excel export</li>
+                </ul>
             </div>
-            <div class="hero-image">
-                <div class="phone-frame">
-                    <div class="phone-screen scrollable-screen">
-                        <img src="public/home-scroll.jpg" alt="App Home Scrollable" class="scroll-img">
-                    </div>
-                </div>
+            <div class="hero-phones">
+                <div class="phone phone-back"><img src="public/groups.jpg" alt="Groups screen with ROI per group"></div>
+                <div class="phone phone-front scrolling"><img src="public/home-scroll.jpg"
+                        alt="Home screen showing net worth, accounts, groups and friends"></div>
             </div>
         </div>
     </header>
 
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Why Circle?</h2>
-            <div class="feature-marquee">
-                <div class="feature-track" id="feature-list"></div>
+    <main id="features">
+        <section class="feature">
+            <div class="container feature-inner">
+                <div class="phone"><img src="public/home-friends.jpg" alt="Friends who owe you and this month's income and expenses" loading="lazy"></div>
+                <div class="feature-copy">
+                    <span class="tag">Accounts</span>
+                    <h2>See your whole net worth at a glance</h2>
+                    <p>Bank, cash, savings, what friends owe you and your share of every group add up to one number.
+                        Tick accounts on and off to see exactly the total you care about.</p>
+                    <ul class="checks">
+                        <li>Personal accounts, people you lend to or borrow from, and groups</li>
+                        <li>Transfers between accounts, including lending to a friend</li>
+                        <li>Separate profiles to keep, say, personal and business apart</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="screenshots" class="screenshots">
-        <div class="container">
-            <h2 class="section-title">A Look Inside</h2>
-            <div class="screenshot-marquee">
-                <div class="screenshot-track" id="screenshot-list"></div>
+        <section class="feature reverse">
+            <div class="container feature-inner">
+                <div class="phone"><img src="public/groups.jpg" alt="Groups screen" loading="lazy"></div>
+                <div class="feature-copy">
+                    <span class="tag">Groups</span>
+                    <h2>Split trips, bills and investments fairly</h2>
+                    <p>Add friends to a group, give each one a share, and record who paid. Circle keeps track of who
+                        owes whom, so nobody has to do the maths after the trip.</p>
+                    <ul class="checks">
+                        <li>Uneven shares, like 2 : 1 for a joint investment</li>
+                        <li>Return on investment for groups that earn money</li>
+                        <li>Archive finished groups and chart their net over time</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="feature">
+            <div class="container feature-inner">
+                <div class="phone-pair">
+                    <div class="phone"><img src="public/compare.jpg" alt="Compare deals by monthly return"
+                            loading="lazy"></div>
+                    <div class="phone"><img src="public/simulator.jpg" alt="Income simulator for a group"
+                            loading="lazy"></div>
+                </div>
+                <div class="feature-copy">
+                    <span class="tag">Deals</span>
+                    <h2>Know which deal really earns more</h2>
+                    <p>A quick flip can beat a big profit. Enter a cost, a sale price and how many months it takes,
+                        and Circle ranks your options by their compounded monthly return.</p>
+                    <ul class="checks">
+                        <li>Compare as many deals as you like, side by side</li>
+                        <li>Simulate a sale price and see each partner's payout per month and per day</li>
+                        <li>Tap any ROI to see exactly how it was worked out</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature reverse">
+            <div class="container feature-inner">
+                <div class="phone"><img src="public/zakat.jpg" alt="Zakat calculator" loading="lazy"></div>
+                <div class="feature-copy">
+                    <span class="tag">Zakat</span>
+                    <h2>Your Zakat, worked out for you</h2>
+                    <p>Circle fetches today's gold price, sets the Nisab and checks whether your wealth stayed above it
+                        for a full lunar year. If Zakat is due, you see the amount, minus anything you have already
+                        paid.</p>
+                    <ul class="checks">
+                        <li>Live 24K gold price, or enter your own</li>
+                        <li>Hawl checked against your real history</li>
+                        <li>Choose which accounts and groups count</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature">
+            <div class="container feature-inner">
+                <div class="phone"><img src="public/transactions.jpg" alt="Transactions with upcoming bills"
+                        loading="lazy"></div>
+                <div class="feature-copy">
+                    <span class="tag">Everyday</span>
+                    <h2>Bills that remind you, not the other way round</h2>
+                    <p>Set rent, subscriptions and salary to repeat. Circle reminds you on the day, and one tap approves
+                        or skips them. Templates and a built-in calculator keypad make adding anything else quick.</p>
+                    <ul class="checks">
+                        <li>Daily, weekly, monthly or yearly, on the days you pick</li>
+                        <li>Filter by account, category or date and see the totals</li>
+                        <li>Attach receipts, and add from a home screen widget</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="more">
+            <div class="container">
+                <h2 class="section-title">And the things you'd expect</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-icon">📴</div>
+                        <h3>Offline first</h3>
+                        <p>Your data lives on your phone. No sign-up, no internet needed.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">💾</div>
+                        <h3>Automatic backups</h3>
+                        <p>Back up to a folder you choose on a schedule, and restore any time.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📊</div>
+                        <h3>Excel export</h3>
+                        <p>Export your accounts to a spreadsheet and analyse them your way.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔒</div>
+                        <h3>App lock</h3>
+                        <p>Fingerprint, face or passcode, and hidden from the app switcher.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">👁</div>
+                        <h3>Hide amounts</h3>
+                        <p>Blur every number with one tap when someone's looking over your shoulder.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🚫</div>
+                        <h3>No ads, ever</h3>
+                        <p>A clean app with nothing to sell you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2 class="section-title">A look inside</h2>
+            </div>
+            <div class="gallery-track" tabindex="0" aria-label="Screenshots, scroll sideways">
+                <figure><img src="public/home.jpg" alt="Home" loading="lazy">
+                    <figcaption>Home</figcaption>
+                </figure>
+                <figure><img src="public/transactions.jpg" alt="Transactions" loading="lazy">
+                    <figcaption>Transactions</figcaption>
+                </figure>
+                <figure><img src="public/groups.jpg" alt="Groups" loading="lazy">
+                    <figcaption>Groups</figcaption>
+                </figure>
+                <figure><img src="public/roi.jpg" alt="How ROI is calculated" loading="lazy">
+                    <figcaption>ROI, explained</figcaption>
+                </figure>
+                <figure><img src="public/compare.jpg" alt="Compare deals" loading="lazy">
+                    <figcaption>Compare deals</figcaption>
+                </figure>
+                <figure><img src="public/simulator.jpg" alt="Income simulator" loading="lazy">
+                    <figcaption>Income simulator</figcaption>
+                </figure>
+                <figure><img src="public/zakat.jpg" alt="Zakat calculator" loading="lazy">
+                    <figcaption>Zakat</figcaption>
+                </figure>
+                <figure><img src="public/settings.jpg" alt="Settings" loading="lazy">
+                    <figcaption>Settings</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta-inner">
+                <img src="public/icon.png" alt="" width="72" height="72">
+                <h2>Ready to close the circle?</h2>
+                <p>Free, no account needed. Install the APK and you're set up in a minute.</p>
+                <a href="https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/download/latest/circle.apk"
+                    class="btn" id="download-footer">Download for Android</a>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="social-links">
-                    <a href="https://wa.me/201143191824?text=Hello%20Circle%20Team" target="_blank" class="social-btn"
-                        aria-label="WhatsApp">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-whatsapp social-icon whatsapp-icon" viewBox="0 0 16 16">
-                            <path
-                                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-                        </svg>
-                    </a>
-                    <a href="mailto:mohamedfathy29908@gmail.com" class="social-btn" aria-label="Email">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img"
-                            class="social-icon gmail-icon" fill="currentColor">
-                            <path
-                                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-                        </svg>
-                    </a>
-                    <a href="https://buymeacoffee.com/mofasa" class="social-btn" aria-label="Buy me a coffee"
-                        target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                            class="social-icon coffee-icon" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M.11 3.187A.5.5 0 0 1 .5 3h13a.5.5 0 0 1 .488.608l-.22.991a3.001 3.001 0 0 1-1.3 5.854l-.132.59A2.5 2.5 0 0 1 9.896 13H4.104a2.5 2.5 0 0 1-2.44-1.958L.012 3.608a.5.5 0 0 1 .098-.42zm12.574 6.288a2 2 0 0 0 .866-3.899l-.866 3.9zM1.124 3.515l1.666 7.497A1.5 1.5 0 0 0 4.104 12h5.792a1.5 1.5 0 0 0 1.314-.798l1.666-7.497-11.752.01z" />
-                            <path fill-rule="evenodd"
-                                d="M4.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5zm3 0a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5zm3 0a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5z" />
-                        </svg>
-                    </a>
-                </div>
-                <p>&copy; 2026 Circle App. All rights reserved.</p>
-                <p class="visit-count">
-                    <img src="https://visitor-badge.laobi.icu/badge?page_id=circle0.netlify.app" alt="Visit Count">
-                </p>
+        <div class="container footer-inner">
+            <div class="social">
+                <a href="https://wa.me/201143191824?text=Hello%20Circle%20Team" target="_blank" rel="noopener"
+                    aria-label="WhatsApp">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                    </svg>
+                </a>
+                <a href="mailto:mohamedfathy29908@gmail.com" aria-label="Email">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
+                    </svg>
+                </a>
+                <a href="https://buymeacoffee.com/mofasa" target="_blank" rel="noopener" aria-label="Buy me a coffee">
+                    <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M.11 3.187A.5.5 0 0 1 .5 3h13a.5.5 0 0 1 .488.608l-.22.991a3.001 3.001 0 0 1-1.3 5.854l-.132.59A2.5 2.5 0 0 1 9.896 13H4.104a2.5 2.5 0 0 1-2.44-1.958L.012 3.608a.5.5 0 0 1 .098-.42zm12.574 6.288a2 2 0 0 0 .866-3.899l-.866 3.9zM1.124 3.515l1.666 7.497A1.5 1.5 0 0 0 4.104 12h5.792a1.5 1.5 0 0 0 1.314-.798l1.666-7.497-11.752.01z" />
+                        <path fill-rule="evenodd"
+                            d="M4.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5zm3 0a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5zm3 0a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5z" />
+                    </svg>
+                </a>
             </div>
+            <p>&copy; 2026 Circle App. All rights reserved.</p>
+            <img class="visits" src="https://visitor-badge.laobi.icu/badge?page_id=circle0.netlify.app"
+                alt="Visit count" height="20">
         </div>
     </footer>
-
     <script>
-        const featureList = document.getElementById("feature-list");
-        featureList.innerHTML = [
-            {icon: "💳", title: "Personal Accounts", desc: "Manage expenses, income, and transfers. Handle group expenses and income seamlessly."},
-            {icon: "🤝", title: "External Accounts", desc: "Track debts and loans with friends. Manage transfers and transactions for people you know."},
-            {icon: "📝", title: "Settlement Plans", desc: "Generate smart settlement plans to clear debts efficiently with fewer transactions."},
-            {icon: "👥", title: "Groups", desc: "Collaborate on shared assets and trip expenses with real-time group tracking."},
-            {icon: "🔒", title: "Offline First", desc: "Runs entirely on local storage. No internet connection needed to track your finances."},
-            {icon: "💾", title: "Backup & Restore", desc: "Easily export your data for backups and import it whenever you need to restore."},
-            {icon: "📊", title: "Excel Export", desc: "Extract detailed Excel sheets for your accounts to analyze data your way."},
-            {icon: "🚫", title: "No Ads", desc: "Enjoy a clean, distraction-free experience with zero advertisements."},
-            {icon: "🔄", title: "Templates & Recurrent", desc: "Create templates and set up recurrent transactions to automate your regular expenses."},
-            {icon: "🕌", title: "Zakat Calculator", desc: "Calculate your Zakat obligations easily based on your assets and savings."},
-            {icon: "🔐", title: "Biometric Login", desc: "Secure your data with fingerprint or face recognition authentication."},
-            {icon: "👁", title: "Amount Blur", desc: "Hide sensitive amounts with a blur effect for privacy in public spaces."},
-        ].map(f =>
-            `<div class="feature-card"><div class="icon-box">${f.icon}</div><h3>${f.title}</h3><p>${f.desc}</p></div>`
-        ).join("");
-        featureList.innerHTML += featureList.innerHTML;
+        // "A look inside" scrolls by itself and loops forever. It pauses while someone hovers, touches,
+        // drags or focuses it, and people who prefer reduced motion only get the endless loop.
+        (() => {
+            const track = document.querySelector('.gallery-track');
+            const originals = [...track.children];
+            for (const fig of originals) {
+                const copy = fig.cloneNode(true);
+                copy.setAttribute('aria-hidden', 'true');
+                copy.querySelector('img').alt = '';
+                track.appendChild(copy);
+            }
+            // Distance from a screenshot to its copy: scrolling by this much looks identical
+            const period = () => track.children[originals.length].offsetLeft - originals[0].offsetLeft;
 
-        const screenshotList = document.getElementById("screenshot-list");
-        screenshotList.innerHTML = [
-            {src: "public/home.jpg", alt: "Home Screen"},
-            {src: "public/transactions.jpg", alt: "Transactions Screen"},
-            {src: "public/groups.jpg", alt: "Groups Screen"},
-            {src: "public/settings.jpg", alt: "Settings Screen"},
-        ].map(s =>
-            `<div class="screenshot-item"><img src="${s.src}" alt="${s.alt}"></div>`
-        ).join("");
-        screenshotList.innerHTML += screenshotList.innerHTML;
+            const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const SPEED = 40; // px per second
+            let pausedUntil = 0, hovering = false, dragging = false, last = performance.now();
+            // Browsers may round scrollLeft to whole pixels, too coarse for a slow scroll, so keep our own
+            let pos = 1;
 
-        // Swipe/drag support for marquees
-        function enableDrag(container, track) {
-            let dragging = false, startX, scrollStart;
-            function onStart(e) {
+            const wrap = () => {
+                // Follow scrolling done by hand
+                if (Math.abs(track.scrollLeft - pos) > 1) pos = track.scrollLeft;
+                const p = period();
+                if (pos >= p) pos -= p;
+                else if (pos <= 0) pos += p;
+                if (Math.abs(track.scrollLeft - pos) > 1) track.scrollLeft = pos;
+            };
+            const pause = (ms = 2500) => { pausedUntil = performance.now() + ms; };
+
+            function tick(now) {
+                const dt = Math.min(now - last, 100) / 1000;
+                last = now;
+                // Pick up any scrolling by hand first, so it isn't overwritten
+                wrap();
+                if (!reduceMotion && !hovering && !dragging && now > pausedUntil && document.activeElement !== track) {
+                    pos += SPEED * dt;
+                    track.scrollLeft = pos;
+                    wrap();
+                }
+                requestAnimationFrame(tick);
+            }
+
+            track.scrollLeft = pos;
+            track.addEventListener('scroll', wrap, { passive: true });
+            track.addEventListener('mouseenter', () => { hovering = true; });
+            track.addEventListener('mouseleave', () => { hovering = false; });
+            track.addEventListener('touchstart', () => pause(), { passive: true });
+            track.addEventListener('touchend', () => pause(), { passive: true });
+            track.addEventListener('wheel', () => pause(), { passive: true });
+
+            // Drag with the mouse; touch screens swipe natively
+            let startX = 0, startScroll = 0;
+            track.addEventListener('pointerdown', e => {
+                if (e.pointerType !== 'mouse') return;
                 dragging = true;
-                container.style.cursor = "grabbing";
-                track.style.animation = "none";
-                startX = (e.touches ? e.touches[0] : e).clientX;
-                scrollStart = container.scrollLeft;
-            }
-            function onMove(e) {
-                if (!dragging) return;
-                e.preventDefault();
-                container.scrollLeft = scrollStart - ((e.touches ? e.touches[0] : e).clientX - startX);
-            }
-            function onEnd() {
+                startX = e.clientX;
+                startScroll = track.scrollLeft;
+                track.classList.add('dragging');
+                track.setPointerCapture(e.pointerId);
+            });
+            track.addEventListener('pointermove', e => {
+                if (dragging) track.scrollLeft = startScroll - (e.clientX - startX);
+            });
+            const endDrag = () => {
                 if (!dragging) return;
                 dragging = false;
-                container.style.cursor = "grab";
-            }
-            container.addEventListener("mousedown", onStart);
-            container.addEventListener("mousemove", onMove);
-            container.addEventListener("mouseup", onEnd);
-            container.addEventListener("mouseleave", onEnd);
-            container.addEventListener("touchstart", onStart, {passive: true});
-            container.addEventListener("touchmove", onMove, {passive: false});
-            container.addEventListener("touchend", onEnd);
-        }
+                track.classList.remove('dragging');
+                pause();
+            };
+            track.addEventListener('pointerup', endDrag);
+            track.addEventListener('pointercancel', endDrag);
 
-        enableDrag(document.querySelector(".feature-marquee"), featureList);
-        enableDrag(document.querySelector(".screenshot-marquee"), screenshotList);
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+            requestAnimationFrame(tick);
+        })();
     </script>
 </body>
 
