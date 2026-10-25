@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join a group on Circle</title>
+    <meta name="description" content="You've been invited to share a group on Circle.">
+    <!-- The invite token is in the URL: never send it anywhere, never index it -->
+    <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0f1419">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/public/icon.png">
+    <style>
+        .join {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+        }
+
+        .join-card {
+            width: 100%;
+            max-width: 420px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .join-card img {
+            margin: 0 auto 20px;
+            border-radius: 18px;
+        }
+
+        .join-card h1 {
+            font-size: 1.6rem;
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        .join-card p {
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+
+        .join-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .join-actions .btn {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .join-steps {
+            text-align: start;
+            color: var(--subtle);
+            font-size: 0.9rem;
+            margin-top: 24px;
+            padding-inline-start: 20px;
+        }
+
+        .join-steps li+li {
+            margin-top: 6px;
+        }
+
+        .join-error {
+            color: #ef4444;
+        }
+
+        [dir="rtl"] .join-steps {
+            padding-inline-start: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="join">
+        <div class="join-card">
+            <img src="/public/icon.png" alt="" width="72" height="72">
+            <h1 id="title">You're invited to a shared group</h1>
+            <p id="lead">Open the invite in Circle to see the group and join it.</p>
+            <div class="join-actions" id="actions">
+                <a class="btn" id="open">Open in Circle</a>
+                <a class="btn btn-ghost" id="get"
+                    href="https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/latest/download/circle.apk">Get
+                    Circle for Android</a>
+            </div>
+            <ol class="join-steps" id="steps">
+                <li>Install Circle if you don't have it yet.</li>
+                <li>Come back to this page and tap "Open in Circle".</li>
+                <li>Sign in with Google and pick your name in the group.</li>
+            </ol>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            var APK = 'https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/latest/download/circle.apk';
+            var ar = (navigator.language || '').toLowerCase().indexOf('ar') === 0;
+            var text = ar ? {
+                title: 'دعوة إلى مجموعة مشتركة', lead: 'افتح الدعوة في Circle لترى المجموعة وتنضم إليها.',
+                open: 'افتح في Circle', get: 'حمّل Circle لأندرويد',
+                steps: ['ثبّت Circle إن لم يكن لديك.', 'عُد إلى هذه الصفحة واضغط "افتح في Circle".', 'سجّل الدخول بحساب Google واختر اسمك في المجموعة.'],
+                bad: 'رابط الدعوة هذا غير مكتمل. اطلب رابطاً جديداً.'
+            } : {
+                title: "You're invited to a shared group", lead: 'Open the invite in Circle to see the group and join it.',
+                open: 'Open in Circle', get: 'Get Circle for Android',
+                steps: ["Install Circle if you don't have it yet.", 'Come back to this page and tap "Open in Circle".', 'Sign in with Google and pick your name in the group.'],
+                bad: 'This invite link is incomplete. Ask for a new one.'
+            };
+            if (ar) { document.documentElement.lang = 'ar'; document.documentElement.dir = 'rtl'; }
+            document.getElementById('title').textContent = text.title;
+            document.getElementById('lead').textContent = text.lead;
+            document.getElementById('open').textContent = text.open;
+            document.getElementById('get').textContent = text.get;
+            var steps = document.getElementById('steps');
+            steps.innerHTML = '';
+            text.steps.forEach(function (s) { var li = document.createElement('li'); li.textContent = s; steps.appendChild(li); });
+
+            // /join/<token>: 43 base64url characters
+            var match = /\/join\/([A-Za-z0-9_-]{43})\/?$/.exec(location.pathname);
+            if (!match) {
+                var lead = document.getElementById('lead');
+                lead.textContent = text.bad;
+                lead.className = 'join-error';
+                document.getElementById('open').style.display = 'none';
+                return;
+            }
+            var token = match[1];
+            var open = document.getElementById('open');
+            if (/android/i.test(navigator.userAgent)) {
+                // Opens the app when installed, otherwise downloads it
+                open.href = 'intent://join/' + token + '#Intent;scheme=circle;package=com.mofasa.Circle;S.browser_fallback_url=' +
+                    encodeURIComponent(APK) + ';end';
+            } else {
+                open.href = 'circle://join/' + token;
+            }
+        })();
+    </script>
+</body>
+
+</html>
