@@ -8,7 +8,7 @@
 
 Track every account, split trips and bills with friends, see what an investment really earns each month and work out your Zakat. Everything stays on your phone.
 
-<a href="https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/download/latest/circle.apk"><img src="https://img.shields.io/badge/Download-APK-3b82f6?style=for-the-badge&logo=android&logoColor=white" alt="Download the APK"></a>
+<a href="https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/latest/download/circle.apk"><img src="https://img.shields.io/badge/Download-APK-3b82f6?style=for-the-badge&logo=android&logoColor=white" alt="Download the APK"></a>
 <a href="https://circle-releases.pages.dev/"><img src="https://img.shields.io/badge/Visit-Website-1a1f2e?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visit the website"></a>
 
 ![Free](https://img.shields.io/badge/Free-10b981?style=flat-square)
@@ -148,7 +148,7 @@ Set rent, subscriptions and salary to repeat. Circle reminds you on the day, and
 
 ## ⬇️ Get Circle
 
-1. **[Download the APK](https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/download/latest/circle.apk)** on your Android phone.
+1. **[Download the APK](https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/latest/download/circle.apk)** on your Android phone.
 2. Open it and allow installing from your browser if asked.
 3. That's it — no account needed. You're set up in a minute.
 
@@ -158,7 +158,7 @@ Set rent, subscriptions and salary to repeat. Circle reminds you on the day, and
 
 ### Ready to close the circle?
 
-<a href="https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/download/latest/circle.apk"><img src="https://img.shields.io/badge/Download%20Circle-for%20Android-3b82f6?style=for-the-badge&logo=android&logoColor=white" alt="Download Circle for Android"></a>
+<a href="https://github.com/Mohamed-Fathy-Salah/circle-releases/releases/latest/download/circle.apk"><img src="https://img.shields.io/badge/Download%20Circle-for%20Android-3b82f6?style=for-the-badge&logo=android&logoColor=white" alt="Download Circle for Android"></a>
 
 <sub>Questions or ideas? <a href="mailto:mohamedfathy29908@gmail.com">Send an email</a> · Enjoying Circle? <a href="https://buymeacoffee.com/mofasa">Buy me a coffee ☕</a></sub>
 
