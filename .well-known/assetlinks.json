@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mofasa.Circle",
+      "sha256_cert_fingerprints": [
+        "12:86:CD:55:13:CB:87:7A:A7:17:99:3C:83:F8:DE:C1:D4:8C:D7:F6:8A:9B:59:0E:BE:B4:27:68:05:0C:BC:3B"
+      ]
+    }
+  }
+]
