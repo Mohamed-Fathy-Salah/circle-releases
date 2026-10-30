@@ -356,6 +356,8 @@ a {
 
 .phone-pair {
     display: flex;
+    /* Each phone keeps its own height; stretching the first to the offset second left a black band */
+    align-items: flex-start;
     gap: 22px;
 }
 
