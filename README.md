@@ -120,6 +120,25 @@ Set rent, subscriptions and salary to repeat. Circle reminds you on the day, and
 </tr>
 </table>
 
+## 💬 Bank messages — your bank's texts, turned into transactions
+
+<table>
+<tr>
+<td width="38%" align="center">
+<img src="public/bank-messages.jpg" alt="Bank texts waiting to be approved as transactions" width="230">
+</td>
+<td width="62%" valign="middle">
+
+Pick the sender your bank texts from and show Circle how its messages read. When a matching text arrives, even with the app closed, it waits as a pending transaction, and one tap records it.
+
+- Start a template from a real message, then mark the `{amount}` and `{name}`
+- Expenses, income and transfers, with a transfer both banks text about kept once
+- Read on your phone only; codes and offers from the bank are never kept
+
+</td>
+</tr>
+</table>
+
 ## ✨ And the things you'd expect
 
 | | | |
